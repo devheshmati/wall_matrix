@@ -67,10 +67,11 @@ class Effect {
 }
 
 const effect = new Effect(canvas.width, canvas.height);
+console.log(effect);
 
 // delta time
 let lastTime = 0;
-const fps = 60;
+const fps = 15;
 const nextFrame = 1000 / fps;
 let timer = 0;
 
@@ -78,10 +79,7 @@ const animate = (timeStamp) => {
   const deltaTime = timeStamp - lastTime;
   lastTime = timeStamp;
   if (timer > nextFrame) {
-    const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd.addColorStop(0, "rgba(0,0,0, 0.19)");
-    grd.addColorStop(1, "rgba(100, 100, 100, 0.19)");
-    ctx.fillStyle = grd;
+    ctx.fillStyle = 'rgba(0,0,0, 0.05)';
     ctx.textAlign = "center";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = textGradient;
